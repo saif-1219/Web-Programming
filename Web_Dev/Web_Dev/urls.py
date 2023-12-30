@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hell/',include('hell.urls')),
     path('Time/',include('Time.urls')),
-    path('Luck/',include('Luck.urls'))
+    path('Luck/',include('Luck.urls')),
+    path('todo/',include('todo.urls')),
 ]
