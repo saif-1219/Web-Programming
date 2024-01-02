@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+{% block body %}
+<h2>
+    Search Results:
+</h2>
+{%if empty%}
+Nothing Found!!
+{%else%}
+<ul>
+    {%for string in subs%}
+    <li>
+        <a href="{%url 'index'%}{{string}}">{{string}}</a>
+    </li>
+    {%endfor%}
+</ul>
+{%endif%}
+
+{% endblock %}
