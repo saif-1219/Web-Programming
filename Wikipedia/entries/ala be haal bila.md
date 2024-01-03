@@ -1,1 +1,0 @@
-ala theek ba biradar
