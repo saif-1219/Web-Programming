@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django import forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import markdown2
 
 from . import util
 import random
@@ -39,7 +40,7 @@ def new_page(request):
 def title(request, title):
     return render(request, "encyclopedia/title.html", {
         "title": title,
-        "content": util.get_entry(title)
+        "content": markdown2.markdown(util.get_entry(title))
     })
 
 def edit_page(request):
@@ -47,7 +48,7 @@ def edit_page(request):
         title = request.POST['page_title']
         return render(request, "encyclopedia/edit_page.html", {
             "title": title,
-            "content": util.get_entry(title)
+            "content":markdown2.markdown(util.get_entry(title))
         })
 
 def save(request):
